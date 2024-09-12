@@ -1,0 +1,13 @@
+# Typo3, Composer
+/var
+/vendor
+/public/*
+!/public/.htaccess
+!/public/typo3conf/LocalConfiguration.php
+!/public/typo3conf/AdditionalConfiguration.php
+
+# MacOS
+.DS_Store
+
+# IntelliJ
+.idea
