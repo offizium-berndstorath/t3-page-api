@@ -6,6 +6,7 @@ namespace offizium\T3pageapi\Domain\Model;
 use SourceBroker\T3api\Annotation as T3api;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+use Psr\Log\LoggerInterface;
 
 /**
  * @T3api\ApiResource(
@@ -48,9 +49,10 @@ class Page extends AbstractEntity
      */
     protected ObjectStorage $contentElements;
 
-    public function __construct() {
+    public function __construct(private readonly LoggerInterface $logger) {
         $this->pages = new ObjectStorage();
         $this->contentElements = new ObjectStorage();
+        $this->logger->debug('Class created');
     }
 
     public function getTitle(): string {
@@ -62,6 +64,7 @@ class Page extends AbstractEntity
     }
 
     public function getPages(): ObjectStorage {
+        $this->logger->debug('Get Pages');
         return $this->pages;
     }
 
