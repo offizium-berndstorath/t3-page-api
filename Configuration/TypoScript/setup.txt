@@ -8,20 +8,5 @@ plugin.tx_nnrestapi {
 				defaultStoragePath = 1:/t3pageapi/
 			}		
 		}
-		
-		# Default values for new entries
-		insertDefaultValues {
-			Offizium\T3pageapi\Domain\Model\Entry {
-				pid = 4
-			}
-		}
-
-		# Reduce JSON in response to certain fields
-		globalDistillers {
-			Offizium\T3pageapi\Domain\Model\Entry {
-				#include = uid, title, files
-				flattenFileReferences = 1
-			}
-		}
 	}
 }
