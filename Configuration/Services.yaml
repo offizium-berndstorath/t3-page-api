@@ -1,0 +1,10 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Offizium\T3_page_api\:
+    resource: '../Classes/*'
+    exclude: 
+      - '../Classes/Domain/Model/*'

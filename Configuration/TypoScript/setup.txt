@@ -1,0 +1,27 @@
+
+plugin.tx_nnrestapi {
+	settings {
+		
+		# where to upload new files. Use @Api\Upload("config[T3_page_api]")
+		fileUploads {
+			T3_page_api {
+				defaultStoragePath = 1:/T3_page_api/
+			}		
+		}
+		
+		# Default values for new entries
+		insertDefaultValues {
+			Offizium\T3_page_api\Domain\Model\Entry {
+				pid = 4
+			}
+		}
+
+		# Reduce JSON in response to certain fields
+		globalDistillers {
+			Offizium\T3_page_api\Domain\Model\Entry {
+				#include = uid, title, files
+				flattenFileReferences = 1
+			}
+		}
+	}
+}
