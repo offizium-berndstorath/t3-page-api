@@ -2,8 +2,8 @@
 
 namespace Offizium\T3pageapi\Api;
 
-use My\Extension\Domain\Model\TtContent as TtContent;
-use My\Extension\Domain\Repository\TtContentRepository;
+use Offizium\T3pageapi\Domain\Model\TtContent as TtContent;
+use Offizium\T3pageapi\Domain\Repository\TtContentRepository;
 use nn\t3;
 use Nng\Nnrestapi\Api\AbstractApi;
 
