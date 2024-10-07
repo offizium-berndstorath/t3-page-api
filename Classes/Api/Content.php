@@ -78,7 +78,6 @@ class Content extends AbstractApi
      * @return array
      */
     public function postIndexAction(TtContent $ttContentElement = null) {
-        return [];
         t3::Db()->save($ttContentElement);
         return $ttContentElement;
     }
