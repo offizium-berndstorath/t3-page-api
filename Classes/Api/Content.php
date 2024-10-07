@@ -71,7 +71,7 @@ class Content extends AbstractApi
      * this endpoint.
      *
      * @Api\Access("be_users,fe_users")
-     * @Api\Upload("config[apidemo]")
+     * @Api\Upload("config[t3pageapi]")
      * @Api\Example("{'pid':1, 'colPos':0, 'header':'Test', 'assets':['UPLOAD:/file-0']}");
      *
      * @param TtContent $ttContentElement
