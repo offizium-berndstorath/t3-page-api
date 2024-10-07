@@ -1,7 +1,7 @@
 #
-# Table structure for table 'tx_t3_page_api_domain_model_entry'
+# Table structure for table 'tx_t3pageapi_domain_model_entry'
 #
-CREATE TABLE tx_t3_page_api_domain_model_entry (
+CREATE TABLE tx_t3pageapi_domain_model_entry (
 
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,

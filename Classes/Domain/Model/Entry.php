@@ -1,5 +1,5 @@
 <?php
-namespace Offizium\T3_page_api\Domain\Model;
+namespace Offizium\T3pageapi\Domain\Model;
 
 use \TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use \Nng\Nnrestapi\Domain\Model\AbstractRestApiModel;

@@ -1,9 +1,9 @@
 <?php
 
-namespace Offizium\T3_page_api\Api;
+namespace Offizium\T3pageapi\Api;
 
-use Offizium\T3_page_api\Domain\Repository\EntryRepository;
-use Offizium\T3_page_api\Domain\Model\Entry as EntryModel;
+use Offizium\T3pageapi\Domain\Repository\EntryRepository;
+use Offizium\T3pageapi\Domain\Model\Entry as EntryModel;
 use Nng\Nnrestapi\Annotations as Api;
 
 /**
@@ -86,7 +86,7 @@ class Entry extends \Nng\Nnrestapi\Api\AbstractApi
 	 * this endpoint.
 	 * 
 	 * @Api\Access("be_users,fe_users")
-	 * @Api\Upload("config[T3_page_api]")
+	 * @Api\Upload("config[t3pageapi]")
 	 * @Api\Example("{'title':'Example', 'files':['UPLOAD:/file-0']}");
 	 * 
 	 * @param EntryModel $entry
@@ -117,7 +117,7 @@ class Entry extends \Nng\Nnrestapi\Api\AbstractApi
 	 * this endpoint.
 	 * 
 	 * @Api\Access("be_users,fe_users")
-	 * @Api\Upload("config[T3_page_api]")
+	 * @Api\Upload("config[t3pageapi]")
 	 * @Api\Label("/api/entry/{uid}")
 	 * 
 	 * @param EntryModel $entry

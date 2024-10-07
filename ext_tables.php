@@ -7,4 +7,4 @@ call_user_func(
 	{
 		
 	},
-'T3_page_api');
+'t3pageapi');

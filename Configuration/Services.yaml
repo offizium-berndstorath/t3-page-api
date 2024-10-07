@@ -4,7 +4,7 @@ services:
     autoconfigure: true
     public: false
 
-  Offizium\T3_page_api\:
+  Offizium\T3pageapi\:
     resource: '../Classes/*'
     exclude: 
       - '../Classes/Domain/Model/*'

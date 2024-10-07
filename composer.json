@@ -1,33 +1,26 @@
 {
-  "name": "offizium/t3_page_api",
+  "name": "offizium/t3pageapi",
   "version": "1.0.0",
   "type": "typo3-cms-extension",
   "description": "Create Pages using the Api",
   "require": {
-    "php": ">=8.0",
-    "typo3/cms-core": "^12.4.0",
+    "typo3/cms-core": "^12.0",
     "nng/nnrestapi": "^2.0",
     "nng/nnhelpers": "^2.0"
   },
     "autoload": {
     "psr-4": {
-      "Offizium\\T3_page_api\\": "Classes"
+      "Offizium\\T3pageapi\\": "Classes"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Offizium\\T3_page_api\\Tests\\": "Tests"
+      "Offizium\\T3pageapi\\Tests\\": "Tests"
     }
   },
   "extra": {
     "typo3/cms": {
-       "extension-key": "t3_page_api"
-    }
-  },
-  "config": {
-    "allow-plugins": {
-      "typo3/cms-composer-installers": true,
-      "typo3/class-alias-loader": true
+       "extension-key": "t3pageapi"
     }
   }
 }
