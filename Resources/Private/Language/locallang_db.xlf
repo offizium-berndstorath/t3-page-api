@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2015-03-12T20:58:18Z" product-name="T3_page_api">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-03-12T20:58:18Z" product-name="t3_page_api">
 		<header/>
 		<body>
 								
-			<trans-unit id="tx_T3_page_api_domain_model_entry">
+			<trans-unit id="tx_t3_page_api_domain_model_entry">
 				<source>Example data</source>
 			</trans-unit>
 

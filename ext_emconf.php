@@ -1,11 +1,9 @@
 <?php
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'Rest-Api example',
-    'description' => 'Example extension for EXT:nnrestapi',
+    'title' => 't3 page api',
+    'description' => 'Create Pages using the Api',
     'category' => 'frontend',
-    'author' => 'yourcompany.de',
-    'author_email' => 'your@email.de',
     'state' => 'stable',
     'internal' => '',
     'uploadfolder' => '0',

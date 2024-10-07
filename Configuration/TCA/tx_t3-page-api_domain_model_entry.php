@@ -20,14 +20,14 @@
 
 	return [
 		'ctrl' => [
-			'title'	=> 'LLL:EXT:T3_page_api/Resources/Private/Language/locallang_db.xlf:tx_T3_page_api_domain_model_entry',
+			'title'	=> 'LLL:EXT:t3_page_api/Resources/Private/Language/locallang_db.xlf:tx_t3_page_api_domain_model_entry',
 			'label' => 'title',
 			'searchFields' => '',
             'tstamp' => 'tstamp',
             'crdate' => 'crdate',
             'cruser_id' => 'cruser_id',
             'dividers2tabs' => TRUE,    
-            'iconfile' => 'EXT:T3_page_api/Resources/Public/Icons/Extension.svg',
+            'iconfile' => 'EXT:t3_page_api/Resources/Public/Icons/Extension.svg',
             'languageField' => 'sys_language_uid',
             'transOrigPointerField' => 'l10n_parent',
             'transOrigDiffSourceField' => 'l10n_diffsource',
@@ -58,7 +58,7 @@
         ],
 
         'columns' => \nn\t3::TCA()->createConfig(
-			'tx_T3_page_api_domain_model_entry',
+			'tx_t3_page_api_domain_model_entry',
 			true,
 			$fields,
 		),
