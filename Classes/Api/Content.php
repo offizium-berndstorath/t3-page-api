@@ -7,6 +7,8 @@ use My\Extension\Domain\Repository\TtContentRepository;
 use nn\t3;
 use Nng\Nnrestapi\Api\AbstractApi;
 
+use Nng\Nnrestapi\Annotations as Api;
+
 /**
  * This annotation registers this class as an Endpoint!
  *
