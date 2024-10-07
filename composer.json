@@ -4,9 +4,10 @@
   "type": "typo3-cms-extension",
   "description": "Create Pages using the Api",
   "require": {
-    "typo3/cms-core": "^12.0",
+    "typo3/cms-core": "^12.4",
     "nng/nnrestapi": "^2.0",
-    "nng/nnhelpers": "^2.0"
+    "nng/nnhelpers": "^2.0",
+    "typo3/cms-extbase": "^12.4"
   },
     "autoload": {
     "psr-4": {
