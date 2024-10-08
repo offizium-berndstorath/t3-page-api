@@ -43,8 +43,7 @@ class Content extends AbstractApi
      * https://www.mysite.com/api/content/{uid}
      * ```
      *
-     * @Api\Access("public")
-     * @Api\Localize()
+     * @Api\Access("be_users,fe_users")
      * @Api\Label("/api/content/{uid}")
      *
      * @param TtContent $entry
