@@ -6,3 +6,5 @@ services:
 
   Offizium\T3pageapi\:
     resource: '../Classes/*'
+    exclude: 
+      - '../Classes/Domain/Model/*'
