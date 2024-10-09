@@ -2,16 +2,13 @@
 
 namespace Offizium\T3pageapi\Api;
 
+use nn\t3;
+use Nng\Nnrestapi\Annotations as Api;
+use Nng\Nnrestapi\Api\AbstractApi;
 use Offizium\T3pageapi\Domain\Model\TtContent;
 use Offizium\T3pageapi\Domain\Repository\TtContentRepository;
-use nn\t3;
-use Nng\Nnrestapi\Api\AbstractApi;
-
-use Nng\Nnrestapi\Annotations as Api;
 
 /**
- * This annotation registers this class as an Endpoint!
- *
  * @Api\Endpoint()
  */
 class Content extends AbstractApi
