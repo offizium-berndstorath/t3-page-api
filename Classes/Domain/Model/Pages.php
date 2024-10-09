@@ -72,34 +72,6 @@ class Pages extends AbstractRestApiModel
     }
 
     /**
-     * @return bool
-     */
-    public function isHidden(): bool {
-        return $this->hidden;
-    }
-
-    /**
-     * @param bool $hidden
-     */
-    public function setHidden(bool $hidden) {
-        $this->hidden = $hidden;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isDeleted(): bool {
-        return $this->deleted;
-    }
-
-    /**
-     * @param bool $deleted
-     */
-    public function setDeleted(bool $deleted) {
-        $this->deleted = $deleted;
-    }
-
-    /**
      * @return ObjectStorage
      */
     public function getMedia() {
