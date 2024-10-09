@@ -2,7 +2,7 @@
 
 namespace Offizium\T3pageapi\Api;
 
-use Offizium\T3pageapi\Domain\Model\TtContent as TtContent;
+use Offizium\T3pageapi\Domain\Model\TtContent;
 use Offizium\T3pageapi\Domain\Repository\TtContentRepository;
 use nn\t3;
 use Nng\Nnrestapi\Api\AbstractApi;

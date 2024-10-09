@@ -8,4 +8,7 @@ return [
             ],
         ],
     ],
+    Offizium\T3pageapi\Domain\Model\Pages::class => [
+        'tableName' => 'pages',
+    ],
 ];

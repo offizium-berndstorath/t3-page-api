@@ -6,10 +6,8 @@ use Nng\Nnrestapi\Domain\Model\AbstractRestApiModel;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
-/**
- * A simple Model to test things with.
- *
- */
+// ref: https://labor.99grad.de/typo3-docs/typo3-nnrestapi/Examples/Examples/11a_ttcontent.html
+
 class TtContent extends AbstractRestApiModel
 {
     /**
@@ -66,7 +64,7 @@ class TtContent extends AbstractRestApiModel
     }
 
     /**
-     * @return  string
+     * @return string
      */
     public function getCType() {
         return $this->cType;
@@ -74,7 +72,7 @@ class TtContent extends AbstractRestApiModel
 
     /**
      * @param string $cType
-     * @return  self
+     * @return self
      */
     public function setCType($cType) {
         $this->cType = $cType;
@@ -82,7 +80,7 @@ class TtContent extends AbstractRestApiModel
     }
 
     /**
-     * @return  int
+     * @return int
      */
     public function getColPos() {
         return $this->colPos;
@@ -90,7 +88,7 @@ class TtContent extends AbstractRestApiModel
 
     /**
      * @param int $colPos
-     * @return  self
+     * @return self
      */
     public function setColPos($colPos) {
         $this->colPos = $colPos;
@@ -98,7 +96,7 @@ class TtContent extends AbstractRestApiModel
     }
 
     /**
-     * @return  string
+     * @return string
      */
     public function getHeader() {
         return $this->header;
@@ -106,7 +104,7 @@ class TtContent extends AbstractRestApiModel
 
     /**
      * @param string $header
-     * @return  self
+     * @return self
      */
     public function setHeader($header) {
         $this->header = $header;
