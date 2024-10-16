@@ -65,4 +65,17 @@ class Page extends AbstractApi
         return $pageElement;
     }
 
+    /**
+     * # Retrieve all Subpages for a Page
+     *
+     * @Api\Access("be_users,fe_users")
+     * @Api\Label("/api/page/all/{pid}")
+     *
+     * @param Pages $entry
+     * @return array
+     */
+    public function getAllAction(Pages $page = null) {
+        $uid = $page->getUid();
+        return $this->pagesRepository->findBy(['pid' => $uid])->toArray();
+    }
 }
