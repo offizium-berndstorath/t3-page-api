@@ -66,16 +66,15 @@ class Page extends AbstractApi
     }
 
     /**
-     * # Retrieve all Pages for Page
+     * # Retrieve all Subpages for a Page
      *
      * @Api\Access("be_users,fe_users")
      * @Api\Label("/api/page/all/{pid}")
      *
      * @param Pages $entry
-     * @param int $pid
      * @return array
      */
-    public function getAllAction(Pages $page = null, int $uid = null) {
+    public function getAllAction(Pages $page = null) {
         $uid = $page->getUid();
         return $this->pagesRepository->findBy(['pid' => $uid])->toArray();
     }

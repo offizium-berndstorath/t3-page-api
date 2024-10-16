@@ -5,6 +5,7 @@ namespace Offizium\T3pageapi\Api;
 use nn\t3;
 use Nng\Nnrestapi\Annotations as Api;
 use Nng\Nnrestapi\Api\AbstractApi;
+use Offizium\T3pageapi\Domain\Model\Pages;
 use Offizium\T3pageapi\Domain\Model\TtContent;
 use Offizium\T3pageapi\Domain\Repository\TtContentRepository;
 
@@ -78,4 +79,17 @@ class Content extends AbstractApi
         return $ttContentElement;
     }
 
+    /**
+     * # Retrieve all Elements for a Page
+     *
+     * @Api\Access("be_users,fe_users")
+     * @Api\Label("/api/content/all/{pid}")
+     *
+     * @param Pages $entry
+     * @return array
+     */
+    public function getAllAction(Pages $page = null) {
+        $uid = $page->getUid();
+        return $this->ttContentRepository->findBy(['pid' => $uid])->toArray();
+    }
 }
