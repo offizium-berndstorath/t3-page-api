@@ -96,8 +96,7 @@ class Page extends AbstractApi
         if (!$page) {
             return $this->response->notFound("Page with uid [{$uid}] was not found.");
         }
-        $page->setDeleted(true);
-        $page->setHidden(true);
+        t3::Db()->delete($page);
         t3::Db()->save($page);
         return $page;
     }
