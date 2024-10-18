@@ -78,4 +78,27 @@ class Page extends AbstractApi
         $uid = $page->getUid();
         return $this->pagesRepository->findBy(['pid' => $uid])->toArray();
     }
+
+    /**
+     * # Delete an existing Page
+     *
+     * @Api\Access("be_users,fe_users")
+     * @Api\Label("/api/page/{uid}")
+     *
+     * @param Pages $entry
+     * @param int $uid
+     * @return array
+     */
+    public function deleteIndexAction(Pages $page = null, int $uid = null) {
+        if (!$uid) {
+            return $this->response->notFound("No uid passed in URL. Send the request with `api/page/{uid}`");
+        }
+        if (!$page) {
+            return $this->response->notFound("Page with uid [{$uid}] was not found.");
+        }
+        $page->setDeleted(true);
+        $page->setHidden(true);
+        t3::Db()->save($page);
+        return $page;
+    }
 }
