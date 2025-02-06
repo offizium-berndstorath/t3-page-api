@@ -74,8 +74,8 @@ class Page extends AbstractApi
      * @param Pages $entry
      * @return array
      */
-    public function getAllAction(int $pid = null) {
-        return $pid;
+    public function getAllAction(Pages $page = null, int $pid = null) {
+        return $pid ?? 'nullish pid';
         return $this->pagesRepository->findBy(['pid' => $pid])->toArray();
     }
 
