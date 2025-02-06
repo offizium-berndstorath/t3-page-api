@@ -84,6 +84,19 @@ class Page extends AbstractApi
     }
 
     /**
+     * # Retrieve all Root Pages
+     *
+     * @Api\Access("be_users,fe_users")
+     * @Api\Label("/api/page/roots")
+     *
+     * @param Pages $entry
+     * @return array
+     */
+    public function getRootsAction() {
+        return $this->pagesRepository->findBy(['pid' => 0, 'doktype' => 1])->toArray();
+    }
+
+    /**
      * # Delete an existing Page
      *
      * @Api\Access("be_users,fe_users")
