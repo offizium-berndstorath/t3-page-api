@@ -76,8 +76,10 @@ class Page extends AbstractApi
      */
     public function getAllAction() {
         $args =  $this->request->getArguments();
-        return $args;
-        return $pid ?? 'nullish pid';
+        $pid = $args['uid'] ?? null;
+        if (!isset($pid)) {
+            return $this->response->notFound("No uid passed in URL.");
+        }
         return $this->pagesRepository->findBy(['pid' => $pid])->toArray();
     }
 
