@@ -104,6 +104,7 @@ class Content extends AbstractApi
             }
             // remove mask_ from ctype
             $parsedCType = substr($cType, strlen('mask_'));
+            return $parsedCType;
             $entryConfig = $maskConfig['tables']['tt_content']['elements'][`$parsedCType`];
             $columns = $entryConfig['columns'];
             $columnConfigs = $maskConfig['tables']['tt_content']['tca'];
