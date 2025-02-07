@@ -7,8 +7,6 @@ use Nng\Nnrestapi\Annotations as Api;
 use Nng\Nnrestapi\Api\AbstractApi;
 use Offizium\T3pageapi\Domain\Model\Pages;
 use Offizium\T3pageapi\Domain\Repository\PagesRepository;
-use TYPO3\CMS\Core\Resource\ResourceFactory;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * @Api\Endpoint()
@@ -27,7 +25,8 @@ class Page extends AbstractApi
      *
      * @return void
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->pagesRepository = t3::injectClass(PagesRepository::class);
         t3::Db()->ignoreEnableFields($this->pagesRepository);
     }
@@ -42,7 +41,8 @@ class Page extends AbstractApi
      * @param int $uid
      * @return array
      */
-    public function getIndexAction(Pages $page = null, int $uid = null) {
+    public function getIndexAction(Pages $page = null, int $uid = null)
+    {
         if (!$uid) {
             return $this->response->notFound("No uid passed in URL. Send the request with `api/page/{uid}`");
         }
@@ -62,7 +62,8 @@ class Page extends AbstractApi
      * @param Pages $pageElement
      * @return array
      */
-    public function postIndexAction(Pages $pageElement = null) {
+    public function postIndexAction(Pages $pageElement = null)
+    {
         t3::Db()->save($pageElement);
         return $pageElement;
     }
@@ -76,8 +77,9 @@ class Page extends AbstractApi
      * @param Pages $entry
      * @return array
      */
-    public function getAllAction() {
-        $args =  $this->request->getArguments();
+    public function getAllAction()
+    {
+        $args = $this->request->getArguments();
         $pid = $args['uid'] ?? null;
         if (!isset($pid)) {
             return $this->response->notFound("No uid passed in URL.");
@@ -93,10 +95,8 @@ class Page extends AbstractApi
      *
      * @return array
      */
-    public function getRootsAction() {
-        $absolutePath = GeneralUtility::getFileAbsFileName('EXT:site_package/Configuration/Mask/mask.json');
-        $fileContent = file_get_contents($absolutePath);
-        return $fileContent;
+    public function getRootsAction()
+    {
         return $this->pagesRepository->findBy(['pid' => 0, 'doktype' => 1])->toArray();
     }
 
@@ -110,7 +110,8 @@ class Page extends AbstractApi
      * @param int $uid
      * @return array
      */
-    public function deleteIndexAction(Pages $page = null, int $uid = null) {
+    public function deleteIndexAction(Pages $page = null, int $uid = null)
+    {
         if (!$uid) {
             return $this->response->notFound("No uid passed in URL. Send the request with `api/page/{uid}`");
         }
