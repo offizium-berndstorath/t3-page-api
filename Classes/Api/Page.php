@@ -91,15 +91,9 @@ class Page extends AbstractApi
      * @Api\Access("be_users,fe_users")
      * @Api\Label("/api/page/roots")
      *
-     * @param Pages $entry
      * @return array
      */
     public function getRootsAction() {
-        $filePath = "EXT:site_package/Configuration/Mask/mask.json";
-        $resourceFactory = GeneralUtility::makeInstance(ResourceFactory::class);
-        $file = $resourceFactory->retrieveFileOrFolderObject($filePath);
-        $fileContent = $file->getContents();
-        return $fileContent;
         return $this->pagesRepository->findBy(['pid' => 0, 'doktype' => 1])->toArray();
     }
 

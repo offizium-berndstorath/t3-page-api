@@ -88,8 +88,22 @@ class Content extends AbstractApi
      * @param Pages $entry
      * @return array
      */
-    public function getAllAction(Pages $page = null) {
+    public function getAllAction(TtContent $page = null) {
         $uid = $page->getUid();
         return $this->ttContentRepository->findBy(['pid' => $uid])->toArray();
+    }
+
+    /**
+     * # Retrieve all Elements for a Page
+     *
+     * @Api\Access("be_users,fe_users")
+     * @Api\Label("/api/content/allc/{pid}")
+     *
+     * @return array
+     */
+    public function getAllCAction() {
+        $pid = $this->request->getArguments()['uid'] ?? null;
+
+        return t3::Db()->findByValues('tt_content', ['pid' => $pid]);
     }
 }
