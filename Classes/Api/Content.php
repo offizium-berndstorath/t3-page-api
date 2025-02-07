@@ -90,18 +90,19 @@ class Content extends AbstractApi
      * @return array
      */
     public function getAllAction(TtContent $page = null) {
-        $uid = $page->getUid();
+        $pid = $page->getUid();
         /**
          * @var $entries TTContent[]
          */
-        $entries = $this->ttContentRepository->findBy(['pid' => $uid])->toArray();
+        $entries = $this->ttContentRepository->findBy(['pid' => $pid])->toArray();
+        $rawEntries = t3::Db()->findByValues('tt_content', ['pid' => $pid]);
 
         $absolutePath = GeneralUtility::getFileAbsFileName('EXT:site_package/Configuration/Mask/mask.json');
         $fileContent = file_get_contents($absolutePath);
 
         $maskConfig = json_decode($fileContent, true);
 
-        foreach ($entries as $entry) {
+        foreach ($entries as $arrKey=>$entry) {
             $cType = $entry->getCType();
 
             if (!str_starts_with($cType, 'mask_')) {
@@ -119,6 +120,7 @@ class Content extends AbstractApi
             }, ARRAY_FILTER_USE_KEY);
 
             foreach ($filteredTca as $filteredTcaKey => $filteredTcaValue) {
+                $filteredTcaValue['value'] = $rawEntries[$arrKey][$filteredTcaKey];
                 $entry->setMaskConfig($filteredTcaKey, $filteredTcaValue);
             }
         }
