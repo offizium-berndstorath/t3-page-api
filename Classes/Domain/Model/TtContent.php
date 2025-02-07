@@ -116,4 +116,8 @@ class TtContent extends AbstractRestApiModel
     public function setMaskConfig($maskKey, $maskValue) {
         $this->maskConfig[$maskKey] = $maskValue;
     }
+
+    public function getMaskConfig() {
+        return $this->maskConfig;
+    }
 }

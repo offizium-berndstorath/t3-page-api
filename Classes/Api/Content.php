@@ -98,18 +98,22 @@ class Content extends AbstractApi
 
         $absolutePath = GeneralUtility::getFileAbsFileName('EXT:site_package/Configuration/Mask/mask.json');
         $fileContent = file_get_contents($absolutePath);
+
         $maskConfig = json_decode($fileContent, true);
 
         foreach ($entries as $entry) {
             $cType = $entry->getCType();
+
             if (!str_starts_with($cType, 'mask_')) {
                 continue;
             }
             // remove mask_ from ctype
             $parsedCType = substr($cType, strlen('mask_'));
+
             $entryConfig = $maskConfig['tables']['tt_content']['elements'][$parsedCType];
             $columns = $entryConfig['columns'];
             $columnConfigs = $maskConfig['tables']['tt_content']['tca'];
+
             $filteredTca = array_filter($columnConfigs, function($key) use ($columns) {
                 return in_array($key, $columns);
             }, ARRAY_FILTER_USE_KEY);
