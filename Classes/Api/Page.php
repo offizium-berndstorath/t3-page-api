@@ -94,6 +94,9 @@ class Page extends AbstractApi
      * @return array
      */
     public function getRootsAction() {
+        $absolutePath = GeneralUtility::getFileAbsFileName('EXT:site_package/Configuration/Mask/mask.json');
+        $fileContent = file_get_contents($absolutePath);
+        return $fileContent;
         return $this->pagesRepository->findBy(['pid' => 0, 'doktype' => 1])->toArray();
     }
 
