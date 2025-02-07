@@ -129,6 +129,7 @@ class Content extends AbstractApi
             }, ARRAY_FILTER_USE_KEY);
 
             foreach ($filteredTca as $filteredTcaKey => $filteredTcaValue) {
+                // TODO: @Bernd use default
                 $filteredTcaValue['value'] = $rawEntry[$filteredTcaKey];
                 $entry->setMaskConfig($filteredTcaKey, $filteredTcaValue);
             }
