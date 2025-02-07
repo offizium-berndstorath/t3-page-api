@@ -7,6 +7,8 @@ use Nng\Nnrestapi\Annotations as Api;
 use Nng\Nnrestapi\Api\AbstractApi;
 use Offizium\T3pageapi\Domain\Model\Pages;
 use Offizium\T3pageapi\Domain\Repository\PagesRepository;
+use TYPO3\CMS\Core\Resource\ResourceFactory;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * @Api\Endpoint()
@@ -93,6 +95,11 @@ class Page extends AbstractApi
      * @return array
      */
     public function getRootsAction() {
+        $filePath = "EXT:site_package/Configuration/Mask/mask.json";
+        $resourceFactory = GeneralUtility::makeInstance(ResourceFactory::class);
+        $file = $resourceFactory->retrieveFileOrFolderObject($filePath);
+        $fileContent = $file->getContents();
+        return $fileContent;
         return $this->pagesRepository->findBy(['pid' => 0, 'doktype' => 1])->toArray();
     }
 
