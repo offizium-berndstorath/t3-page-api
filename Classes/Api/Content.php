@@ -102,8 +102,6 @@ class Content extends AbstractApi
 
         $maskConfig = json_decode($fileContent, true);
 
-        $a = [];
-
         foreach ($entries as $entry) {
             $cType = $entry->getCType();
 
@@ -131,13 +129,10 @@ class Content extends AbstractApi
             }, ARRAY_FILTER_USE_KEY);
 
             foreach ($filteredTca as $filteredTcaKey => $filteredTcaValue) {
-                $a[] = ['a' => $filteredTcaKey, 'b' => $filteredTcaValue, 'c' => $rawEntry];
                 $filteredTcaValue['value'] = $rawEntry[$filteredTcaKey];
                 $entry->setMaskConfig($filteredTcaKey, $filteredTcaValue);
             }
         }
-
-        return $a;
 
         return $entries;
     }
