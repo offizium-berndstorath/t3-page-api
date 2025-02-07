@@ -91,6 +91,9 @@ class Content extends AbstractApi
      */
     public function getAllAction(TtContent $page = null) {
         $uid = $page->getUid();
+        /**
+         * @var $entries TTContent[]
+         */
         $entries = $this->ttContentRepository->findBy(['pid' => $uid])->toArray();
 
         $absolutePath = GeneralUtility::getFileAbsFileName('EXT:site_package/Configuration/Mask/mask.json');
@@ -112,7 +115,7 @@ class Content extends AbstractApi
             }, ARRAY_FILTER_USE_KEY);
 
             foreach ($filteredTca as $filteredTcaKey => $filteredTcaValue) {
-                $entry[$filteredTcaKey] = $filteredTcaValue;
+                $entry->setMaskConfig($filteredTcaKey, $filteredTcaValue);
             }
         }
 

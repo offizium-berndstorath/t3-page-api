@@ -30,6 +30,8 @@ class TtContent extends AbstractRestApiModel
      */
     protected $assets;
 
+    protected $maskConfig = [];
+
     /**
      * constructor
      *
@@ -109,5 +111,9 @@ class TtContent extends AbstractRestApiModel
     public function setHeader($header) {
         $this->header = $header;
         return $this;
+    }
+
+    public function setMaskConfig($maskKey, $maskValue) {
+        $this->maskConfig[$maskKey] = $maskValue;
     }
 }
