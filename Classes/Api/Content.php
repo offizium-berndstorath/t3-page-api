@@ -108,7 +108,6 @@ class Content extends AbstractApi
             $columns = $entryConfig['columns'];
             $columnConfigs = $maskConfig['tables']['tt_content']['tca'];
             $filteredTca = array_filter($columnConfigs, function($key) use ($columns) {
-                return ['key' => $key, '$columns' => $columns];
                 return in_array($key, $columns);
             }, ARRAY_FILTER_USE_KEY);
             return $filteredTca;
